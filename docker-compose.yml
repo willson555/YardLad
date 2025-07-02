@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  ros:
+    build: .
+    container_name: yardlad_ros
+    volumes:
+      - ./ros2_ws:/ros2_ws
+    privileged: true
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
