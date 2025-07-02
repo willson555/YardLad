@@ -1,5 +1,8 @@
 # YardLad
 A general use yard bot, starting with a small flail mower config. 
+## Setup
+Run `./setup.sh` to install Docker and build the project container. The script prompts for each step or you can pass flags like `--install`, `--build`, and `--up`.
+
 
 
 

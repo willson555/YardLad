@@ -1,0 +1,7 @@
+# Generated files
+*.log
+*.pyc
+__pycache__/
+.env
+venv/
+node_modules/
