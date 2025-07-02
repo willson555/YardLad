@@ -17,6 +17,23 @@ each step or you can pass flags like `--install`, `--build` and `--up`.
 - `docker-compose.yml` – Defines the containers used by the project.
 - `Dockerfile` – Builds the ROS 2 image used by `docker-compose`.
 
+The Docker image installs all ROS 2 packages listed in the Software section
+and automatically clones and builds `odrive_ros2_control` inside the
+workspace so the hardware drivers are available. The packages installed
+by apt during the image build are:
+
+```
+ros-humble-rosbridge-suite
+ros-humble-nav2-bringup
+ros-humble-robot-localization
+ros-humble-foxglove-bridge
+ros-humble-nmea-navsat-driver
+ros-humble-rtabmap-ros
+ros-humble-ros2-control
+ros-humble-ros2-controllers
+ros-humble-diff-drive-controller
+```
+
 Run `docker-compose up` (or use `./setup.sh --up`) to start the system.
 
 
