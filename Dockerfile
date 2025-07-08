@@ -1,4 +1,4 @@
-FROM osrf/ros:humble-ros-base
+FROM ros:humble-ros-base
 
 # Install common ROS 2 packages used by the project
 RUN apt-get update && apt-get install -y \
