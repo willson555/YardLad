@@ -24,10 +24,12 @@ WORKDIR /ros2_ws
 RUN git clone --depth 1 https://github.com/Factor-Robotics/odrive_ros2_control.git src/odrive_ros2_control
 
 # Install ROS dependencies and build the workspace
-RUN . /opt/ros/humble/setup.sh && \
+RUN apt-get update && \
+    . /opt/ros/humble/setup.sh && \
     rosdep update && \
     rosdep install --from-paths src --ignore-src -r -y && \
-    colcon build --symlink-install
+    colcon build --symlink-install && \
+    rm -rf /var/lib/apt/lists/*
 
 # Default command keeps the container running
 CMD ["bash"]
